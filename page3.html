@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Page 3</title>
+</head>
+<body>
+    <h1>Page 3</h1>
+    <p>How did you get here 💀</p>
+    <video controls autoplay name="media">
+        <source src="./page3.mp3" type="audio/mpeg">
+    </video>
+    <input type="text" id="txt">
+    <button id="submit">Submit</button>
+    <script src="./checkblock.js"></script>
+    <script>
+        document.getElementById("submit").onclick = function(){
+            const txt=document.getElementById("txt").value;
+            if (txt !== "banana blitz is the best vr game ever"){
+                document.cookie = "blocked=1; expires=Wed, 01 Jan 2030 00:00:00 UTC; path=/";
+                window.location.reload();
+            } else {
+                alert("You won 🎉\nPress OK to see your prize");
+                document.cookie = "blocked=1; expires=Wed, 01 Jan 2030 00:00:00 UTC; path=/";
+                window.location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goofy Site</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Welcome to Goofy Site</h1>
+    <p>If you get to the end, you win 1 billion dollars! 🤑🤑🤑</p>
+    <p>Choose wisely:</p>
+    <button id="1">1</button>
+    <button id="2">2</button>
+    <button id="3">3</button>
+    <button id="4">4</button>
+    <button id="5">5</button>
+    
+    <script src="./checkblock.js"></script>
+    <script>
+        function handleButtonClick(event) {
+            const buttonId = event.target.id;
+            if (buttonId !== "4") {
+                document.cookie = "blocked=1; expires=Wed, 01 Jan 2030 00:00:00 UTC; path=/";
+                window.location.reload();
+            } else {
+                window.location.replace("./page2.html");
+            }
+        }
+
+        // Add event listeners to all buttons
+        for (let i = 1; i <= 5; i++) {
+            document.getElementById(i.toString()).addEventListener('click', handleButtonClick);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Page 2</title>
+</head>
+<body>
+    <h1>Page 2</h1>
+    <p>You made it past the first page... it won't be as easy from here 😈</p>
+    <p>What did Hamter say DM to sandcastle on Saturday October 5th 2024 9:11 PM?</p>
+    <input type="text" id="txt">
+    <button id="submit">Submit</button>
+    <script src="./checkblock.js"></script>
+    <script>
+        document.getElementById("submit").onclick = function(){
+            const txt=document.getElementById("txt").value;
+            if (txt !== "hamter"){
+                document.cookie = "blocked=1; expires=Wed, 01 Jan 2030 00:00:00 UTC; path=/";
+                window.location.reload();
+            } else {
+                window.location.replace("./page3.html");
+            }
+        }
+    </script>
+</body>
+</html>
